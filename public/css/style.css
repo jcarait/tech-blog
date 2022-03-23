@@ -33,6 +33,11 @@ a:focus {
   font-weight: 500;
 }
 
+.fa-solid,
+.navbar-toggler {
+  color: var(--primary-light-);
+}
+
 #brand-title {
   text-decoration: none;
 }

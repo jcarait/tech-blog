@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jcarait/tech-blog#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "bcrpyt": "^2.0.0",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
