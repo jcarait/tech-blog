@@ -2,9 +2,26 @@
   --primary-dark-: #002626;
   --primary-light-: #d9e9e8;
 }
-
+html,
+body {
+  height: 100%;
+}
 body {
   background-color: var(--primary-light-);
+}
+
+main {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 h1,
@@ -18,8 +35,10 @@ p {
 a,
 a:hover,
 a:focus {
-  color: black;
+  color: var(--primary-dark-);
 }
+
+/*======================================= Header area =======================================*/
 
 .navbar-nav > .nav-link {
   color: var(--primary-light-);
@@ -52,6 +71,52 @@ a:focus {
 #title-container {
   display: flex;
   justify-content: center;
+}
+
+/*======================================= Login Form =======================================*/
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type='email'] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type='password'] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.fa-laptop-code {
+  color: var(--primary-dark-);
+  font-size: 3rem;
+}
+
+.signup {
+  display: flex;
+}
+
+.signup > p {
+  color: var(--primary-dark-);
+  margin-right: auto;
 }
 
 @media (min-width: 992px) {
