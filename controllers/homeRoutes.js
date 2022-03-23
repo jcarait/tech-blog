@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     // Pass posts data and session flag into template
     res.render('homepage', {
       posts,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -56,19 +56,26 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    // Find the posts based on user logged in with session id
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Post }],
+      include: [
+        {
+          model: Post,
+        },
+      ],
     });
 
+    console.log(userData);
+
+    // Convert to plain objects so the data is easier to work with
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('dashboard', {
       ...user,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);

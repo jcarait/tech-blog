@@ -1,0 +1,32 @@
+{{#if posts.length}}
+  <section class='post-section'>
+    <div class='container'>
+      <div class='row'>
+        {{#each posts as |post|}}
+          <div class='container post-card mb-4'>
+            <div class='container-fluid post-card-header'>
+              <div class='row'>
+                <div class='col-md-6 d-flex align-items-center post-title'>
+                  <h2 class='ml-2 pd-1'><a
+                      id='post-link'
+                      href='/post/{{post.id}}'
+                    ></a>{{post.title}}</h2>
+                </div>
+                <div
+                  class='col-md-6 d-flex justify-content-end align-items-center post-user-details'
+                >
+                  <p class='mt-2 mr-2 user-details'>Posted
+                    {{format_date date_created}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class='col-md-12 post-content'>
+              <p class='mt-2'>{{{post.content}}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}
