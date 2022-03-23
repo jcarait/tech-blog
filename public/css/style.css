@@ -14,6 +14,7 @@ main {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
+  flex-direction: column;
   -ms-flex-align: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -76,6 +77,12 @@ a:focus {
 
 /*======================================= Login Form =======================================*/
 
+.login-section {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -116,8 +123,13 @@ a:focus {
 }
 
 .signup > p {
+  text-align: end;
   color: var(--primary-dark-);
   margin-right: auto;
+}
+
+#signup-link {
+  text-align: end;
 }
 
 /*======================================= Post Area =======================================*/
@@ -140,13 +152,13 @@ a:focus {
   width: 100%;
 }
 
-.post-title > h2 {
-  color: var(--primary-light-);
-  font-size: 1.2em;
-}
-
 .post-user-details > p {
   color: var(--primary-light-);
+}
+
+#post-link {
+  color: var(--primary-light-);
+  font-size: 0.7em;
 }
 
 /*======================================= Media Queries =======================================*/
@@ -156,5 +168,17 @@ a:focus {
     justify-content: flex-start;
     margin-left: 1rem;
     margin-bottom: 0.8rem;
+  }
+}
+
+@media (min-width: 568px) {
+  .end {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #post {
+    width: 100%;
   }
 }

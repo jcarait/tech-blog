@@ -1,50 +1,31 @@
 <section class='post-section'>
   <div class='container'>
     <div class='row'>
-      {{! Single user post }}
-      <div class='container post-card mb-4'>
-        <div class='container-fluid post-card-header'>
-          <div class='row'>
-            <div class='col-md-6 d-flex align-items-center post-title'>
-              <h2 class='ml-2 pd-1'>Convert to the Largest Integer Using the ~~
-                Operator</h2>
-            </div>
-            <div
-              class='col-md-6 d-flex justify-content-end align-items-center post-user-details'
-            >
-              <p class='mt-2 mr-2 user-details'>Post by Sal on 23/03/2022</p>
-            </div>
-          </div>
-        </div>
-        <div class='col-md-12 post-content'>
-          <p class='mt-2'>"Neque porro quisquam est qui dolorem ipsum quia dolor
-            sit amet, consectetur, adipisci velit..." "There is no one who loves
-            pain itself, who seeks after it and wants to have it, simply because
-            it is pain..."</p>
-        </div>
-      </div>
-      {{! End of Single User Post }}
-      <div class='container post-card'>
-        <div class='container-fluid post-card-header'>
-          <div class='row'>
-            <div class='col-md-6 d-flex align-items-center post-title'>
-              <h2 class='ml-2 pd-1'>Convert to the Largest Integer Using the ~~
-                Operator</h2>
-            </div>
-            <div
-              class='col-md-6 d-flex justify-content-end align-items-center post-user-details'
-            >
-              <p class='mt-2 mr-2 user-details'>Post by Sal on 23/03/2022</p>
+      {{#each posts as |post|}}
+        <div class='container post-card mb-4'>
+          <div class='container-fluid post-card-header'>
+            <div class='row'>
+              <div class='col-md-6 d-flex align-items-center post-title'>
+                <h2 class='ml-2 pd-1'><a
+                    id='post-link'
+                    href='/post/{{post.id}}'
+                  >{{post.title}}</a></h2>
+              </div>
+              <div
+                class='col-md-6 d-flex justify-content-end align-items-center post-user-details'
+              >
+                <p class='mt-2 mr-2 user-details'>Post by
+                  {{user.username}}
+                  on
+                  {{format_date post.date_created}}</p>
+              </div>
             </div>
           </div>
+          <div class='col-md-12 post-content'>
+            <p class='mt-2'>{{{post.content}}}</p>
+          </div>
         </div>
-        <div class='col-md-12 post-content'>
-          <p class='mt-2'>"Neque porro quisquam est qui dolorem ipsum quia dolor
-            sit amet, consectetur, adipisci velit..." "There is no one who loves
-            pain itself, who seeks after it and wants to have it, simply because
-            it is pain..."</p>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </section>

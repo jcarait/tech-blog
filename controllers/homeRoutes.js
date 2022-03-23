@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -16,34 +16,41 @@ router.get('/', async (req, res) => {
 
     // Convert to plain objects so the data is easier to work with
     const posts = postData.map((post) => post.get({ plain: true }));
-
+    console.log(posts);
     // Pass posts data and session flag into template
     res.render('homepage', {
       posts,
-      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment', 'date_created'],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
-      ...post,
-      logged_in: req.session.logged_in,
-    });
+    console.log(post);
+    if (req.session.logged_in) {
+      res.render('post', {
+        post,
+      });
+    } else {
+      res.render('login');
+    }
   } catch (err) {
     res.status(500).json(err);
   }
@@ -72,7 +79,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 

@@ -1,15 +1,30 @@
-<form class="form-signin">
-      <i class="fa-solid fa-laptop-code"></i>
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputUsername" class="sr-only">Username</label>
-      <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
-      <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
-      <div class="signup mb-3">
-        <p>Don't have an account?</p>
-        <p><a href="/signup">Sign up</a></p>
-      </div>
-    </form>
+<section class='login-section'>
+  <form class='form-signin'>
+    <i class='fa-solid fa-laptop-code'></i>
+    <h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>
+    <label for='inputUsername' class='sr-only'>Username</label>
+    <input
+      type='username'
+      id='inputUsername'
+      class='form-control'
+      placeholder='Username'
+      required
+      autofocus
+    />
+    <label for='inputPassword' class='sr-only'>Password</label>
+    <input
+      type='password'
+      id='inputPassword'
+      class='form-control mb-3'
+      placeholder='Password'
+      required
+    />
+    <button class='btn btn-lg btn-primary btn-block mb-3' type='submit'>Sign in</button>
+    <div class='signup mb-3'>
+      <p>Don't have an account?</p>
+      <p><a href='/signup' id='signup-link'>Sign up</a></p>
+    </div>
+  </form>
 
-    <script src="./js/login.js"></script>
+  <script src='./js/login.js'></script>
+</section>
