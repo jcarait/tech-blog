@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
     // Pass posts data and session flag into template
     res.render('homepage', {
       posts,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -36,7 +37,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['comment', 'date_created'],
+          include: [{ model: User, attributes: ['username'] }],
         },
       ],
     });
@@ -44,13 +45,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     console.log(post);
-    if (req.session.logged_in) {
-      res.render('post', {
-        post,
-      });
-    } else {
-      res.render('login');
-    }
+
+    res.render('post', {
+      post,
+      logged_in: true,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
