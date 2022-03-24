@@ -5,9 +5,11 @@
         <div class='container-fluid post-card-header'>
           <div class='row'>
             <div class='col-md-6 d-flex align-items-center post-title'>
-              <a id='post-link' href='/post/{{post.id}}'><h2
-                  class='ml-2 pd-1'
-                >{{post.title}}</h2></a>
+              <a
+                id='post-link'
+                href='/post/{{post.id}}'
+                data-id='{{post.id}}'
+              ><h2 class='ml-2 pd-1'>{{post.title}}</h2></a>
             </div>
             <div
               class='col-md-6 d-flex justify-content-end align-items-center post-user-details'
@@ -43,7 +45,7 @@
       <div
         class='col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4'
       >
-        <form id='algin-form'>
+        <form class='new-comment-form'>
           <div class='form-group'>
             <h4>Leave a comment</h4>
             <label for='message'>Message</label>
@@ -56,10 +58,12 @@
             ></textarea>
           </div>
           <div class='form-group'>
-            <button type='button' id='post' class='btn'>Post Comment</button>
+            <button type='submit' id='post' class='btn'>Post Comment</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script src='/js/comment.js'></script>

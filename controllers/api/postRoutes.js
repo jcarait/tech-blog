@@ -7,6 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
+      post_id: req.params.id,
     });
 
     res.status(200).json(newPost);
@@ -23,8 +24,6 @@ router.put('/:id', withAuth, async (req, res) => {
         id: req.params.id,
       },
     });
-
-    console.log(postData);
 
     res.status(200).json(postData);
   } catch (err) {

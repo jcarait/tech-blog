@@ -2,9 +2,9 @@ const editPostFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
-  const titleEl = document.getElementById('post-title');
+  const postDataId = document.getElementById('post-title');
   const content = document.querySelector('#post-content').value.trim();
-  const id = titleEl.getAttribute('data-id');
+  const id = postDataId.getAttribute('data-id');
 
   if (title && content) {
     const response = await fetch(`/api/posts/${id}`, {
