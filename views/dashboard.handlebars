@@ -1,5 +1,9 @@
-{{#if posts.length}}
-  <section class='post-section'>
+<section class='post-section'>
+  <div class='container d-flex justify-content-center mb-3'>
+    <h2 class='h2 w-80 text-left'>My Posts</h2>
+  </div>
+  {{#if posts.length}}
+
     <div class='container'>
       <div class='row'>
         {{#each posts as |post|}}
@@ -28,5 +32,12 @@
         {{/each}}
       </div>
     </div>
-  </section>
-{{/if}}
+
+  {{/if}}
+</section>
+<div class='container'>
+  <a href='/post'><button
+      type='button'
+      class='btn btn-primary'
+    >Primary</button></a>
+</div>
