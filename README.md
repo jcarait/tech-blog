@@ -9,7 +9,7 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 
 [Tech Blog](https://tech-blog-by-jono.herokuapp.com/)
 
-#### Test account with data
+### Test account with data
 
 **Username**: sal
 
