@@ -123,12 +123,12 @@ a:focus {
 
 .row {
   --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
 }
 
 .post-card {
-  border: 6px solid var(--primary-dark-);
+  border: 8px solid var(--primary-dark-);
   border-radius: 4px;
-  width: 100%;
 }
 
 .post-card-header {
