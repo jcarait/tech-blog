@@ -1,0 +1,28 @@
+<section class='container create-post-section'>
+  <h1 class='h3 mb-3 font-weight-normal'>Create Post</h1>
+  <form class='form-edit-post'>
+    <div class='form-row'>
+      <div class='col mb-2'>
+        <input
+          type='text'
+          class='form-control'
+          id='post-title'
+          placeholder='Title'
+          value='{{post.title}}'
+        />
+      </div>
+      <div class='col mb-2'>
+        <textarea
+          class='form-control'
+          id='post-content'
+          rows='3'
+        >{{{post.content}}}</textarea>
+      </div>
+      <button
+        class='btn btn-lg btn-primary btn-block mb-3'
+        type='submit'
+      >Submit</button>
+    </div>
+  </form>
+</section>
+<script src='/js/editPost.js'></script>

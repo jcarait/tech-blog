@@ -62,7 +62,7 @@ router.get('/dashboard/post/:id', withAuth, async (req, res) => {
 
     console.log(post);
 
-    res.render('taskbyid', {
+    res.render('editPost', {
       post,
       logged_in: true,
     });
