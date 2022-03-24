@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
     // Convert to plain objects so the data is easier to work with
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
+
     // Pass posts data and session flag into template
     res.render('homepage', {
       posts,
@@ -40,8 +40,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       ],
     });
 
-    console.log(userData);
-
     // Convert to plain objects so the data is easier to work with
     const user = userData.get({ plain: true });
 
@@ -59,8 +57,6 @@ router.get('/dashboard/post/:id', withAuth, async (req, res) => {
     const postData = await Post.findByPk(req.params.id, {});
 
     const post = postData.get({ plain: true });
-
-    console.log(post);
 
     res.render('editPost', {
       post,

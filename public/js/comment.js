@@ -5,8 +5,6 @@ const newCommentFormHandler = async (event) => {
   const postDataId = document.getElementById('post-link');
   const id = postDataId.getAttribute('data-id');
 
-  console.log(`id is ${id}`);
-
   if (comment && id) {
     const response = await fetch('/api/comments', {
       method: 'POST',

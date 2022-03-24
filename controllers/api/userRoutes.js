@@ -20,8 +20,6 @@ router.post('/login', async (req, res) => {
       where: { username: req.body.username },
     });
 
-    console.log(userData);
-
     if (!userData) {
       res
         .status(400)
