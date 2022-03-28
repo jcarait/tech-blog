@@ -15,9 +15,13 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 
 **Password**: password12345
 
-### Screenshot
+### Screenshots
 
-![Techblog](./public/techblog.png)
+![Techblog Screenshot-01](./public/images/01-techblog.png)
+
+![Techblog Screenshot-02](./public/images/02-techblog.png)
+
+![Techblog Screenshot-03](./public/images/03-techblog.png)
 
 ## Table of contents
 
